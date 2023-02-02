@@ -19,17 +19,33 @@ int main(){
 
 
 
+    // int n;
+    // cin>>n;
+    // for(int i=0;i<n;++i){
+    //     for(int j=i+1;j<=n;j++){
+    //         if(j==i+1 || j == n - i - 1 || i == 0){
+    //             cout<<j << "a";
+    //         }
+    //         else{
+    //             cout<<"b";
+    //         }
+    //     }
+    //     cout<<endl;
+    // }
+
+
     int n;
-    cin>>n;
-    for(int i=0;i<n;++i){
-        for(int j=i+1;j<=n;j++){
-            if(j==i+1 || j == n - i - 1 || i == 0){
-                cout<<j << "a";
+    cin >> n;
+    for(int row = 0; row < n; row++){
+        for(int col = 0; col < n;col++) {
+            if((row == 0) || (col == 0) || (col == n - row - 1) ){
+                cout << "*" << " ";
             }
             else{
-                cout<<"b";
+                cout << " " << " ";
             }
+
         }
-        cout<<endl;
+        cout << endl;
     }
 }
