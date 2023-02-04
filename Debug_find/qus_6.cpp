@@ -36,9 +36,9 @@ int main(){
 
     int n;
     cin >> n;
-    for(int row = 0; row < n; row++){
+    for(int i = 0; i < n; i++){
         for(int col = 0; col < n;col++) {
-            if((row == 0) || (col == 0) || (col == n - row - 1) ){
+            if((i == 0) || (col == 0) || (col == n - i - 1) ){
                 cout << "*" << " ";
             }
             else{
