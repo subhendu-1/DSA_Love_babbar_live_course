@@ -58,6 +58,25 @@ void prime_numberPrint(int n){
     }
 }
 
+void reverse_Integer(int n){
+    int rem = 0;
+    while (n!=0){
+        rem = n%10;
+        cout << rem;
+        n = n/10;
+    }
+   
+    
+}
+
+
+int set_bit(int n){
+    int i;
+    cout << "Enter the ith number ";
+    cin >> i;
+
+    
+}
 int main(){
     // float r;
     // cout << "Entet redious value " ;
@@ -99,5 +118,8 @@ int main(){
             cout << i << " ";
         }
     }
+
+
+    reverse_Integer(243);
     return 0;
 }
