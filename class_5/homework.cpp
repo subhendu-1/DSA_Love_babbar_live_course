@@ -18,9 +18,9 @@ void find_even_odd(int n){
 }
 
 
-int find_fact(int n){
-    int fact = 1;
-    for(int i = n; i > 0; i--){
+long long int find_fact(long long int n){
+    long long int fact = 1;
+    for(long long int i = n; i > 0; i--){
         fact = fact * i;
     }
     return fact;
@@ -37,7 +37,7 @@ bool find_prime(int n){
         }
         
     }
-    return false;
+    return true;
 }
 
 
@@ -45,7 +45,7 @@ void prime_numberPrint(int n){
     for(int i = 2; i <= n; i++){
         // check for prime
         int count = 0;
-        for(int j = 2; j < n; j++){
+        for(int j = 2; j < i/2; j++){
             if(n%j==0){
                 count++;
                 break;
@@ -77,6 +77,14 @@ int set_bit(int n){
 
     
 }
+
+
+
+int set_kth_bit(int n,int k){
+    int value = 1 << k;
+    int ans = (n|value);
+    return ans;
+}
 int main(){
     // float r;
     // cout << "Entet redious value " ;
@@ -90,6 +98,9 @@ int main(){
     int n;
     cout << "Enter the number ";
     cin >> n;
+    int k;
+    cout << "Enter the kth number ";
+    cin >> k;
     // int fact = find_fact(n);
     // cout << "factorial is " << fact << endl;
 
@@ -104,22 +115,37 @@ int main(){
 
     // prime_numberPrint(n);
 
-    for(int i = 2; i <= n; i++){
-        // check for prime
-        int count = 0;
-        for(int j = 2; j<= i/2; j++){
-            if(i%j==0){
-                count++;
-                break;
-            }
-        }
+    // for(int i = 2; i <= n; i++){
+    //     // check for prime
+    //     int count = 0;
+    //     for(int j = 2; j<= sqrt(i); j++){
+    //         if(i%j==0){
+    //             count++;
+    //             break;
+    //         }
+    //     }
 
-        if(count==0){
-            cout << i << " ";
-        }
-    }
+    //     if(count==0){
+    //         cout << i << " ";
+    //     }
+    // }
 
 
-    reverse_Integer(243);
+    // // using checking prime number function
+
+    // for(int i = 2; i <= n; i++){
+    //     int isiprime = find_prime(i);
+    //     if(isiprime){
+    //         cout << i << " ";
+    //     }
+    // }
+
+
+// set kth bit
+
+int ans = set_kth_bit(n,k);
+cout << ans;
+
+    // reverse_Integer(243);
     return 0;
 }
