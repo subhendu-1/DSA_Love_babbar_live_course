@@ -8,5 +8,8 @@ int main(){
     for(int i = 0; i < vac.size(); i++){
      vac.pop_back();
     }
+
+
+    vac.push_back();
     return 0;
 }
