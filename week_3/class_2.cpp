@@ -188,7 +188,9 @@ int main(){
 
 vector<int>arr{0,1,1,0,1,0,1,0,0};
 int start = 0; 
+int mid = 0;
 int end = arr.size() -1;
+
 // while (start < end)
 // {
 //     if(arr[start] == 1 && arr[end] ==0){
@@ -210,12 +212,36 @@ int end = arr.size() -1;
 // }
 
 
+// for(int i = 0; i < arr.size(); i++){
+//     cout << arr[i] << " ";
+// }
+
 // ANOTHER PROCESS
 
-
-
-for(int i = 0; i < arr.size(); i++){
-    cout << arr[i] << " ";
+while (mid != end)
+{
+    if(arr[mid] == 0){
+        //for swap from left side
+        swap(arr[start],arr[mid]);
+        start++;
+        mid++;
+    }
+    else{
+        //for swap from right side
+        swap(arr[mid],arr[end]);
+        end--;
+    }
 }
+
+for(auto ele:arr){
+    cout << ele << " ";
+}
+
+
+
+
+// for(int i = 0; i < arr.size(); i++){
+//     cout << arr[i] << " ";
+// }
     return 0;
 }
