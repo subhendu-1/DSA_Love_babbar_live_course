@@ -11,5 +11,6 @@ int main(){
 
 
     vac.push_back();
+    vac.pop_back();
     return 0;
 }
