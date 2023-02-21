@@ -9,7 +9,9 @@ int main(){
      vac.pop_back();
     }
 
-
+    for(int i = 0; i < vac.size();i++){
+        
+    }
     vac.push_back();
     vac.pop_back();
     return 0;
