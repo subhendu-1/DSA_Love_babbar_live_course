@@ -8,6 +8,7 @@ int main(){
     for(int i = 0; i < vac.size(); i++){
      vac.pop_back();
     }
+    jsat for dksju
 
     for(int i = 0; i < vac.size();i++){
         
