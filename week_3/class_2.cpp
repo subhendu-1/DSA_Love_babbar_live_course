@@ -63,17 +63,17 @@ int main(){
 
 
 
-    // vector<int>arr{1,4,2,1,5,2,4};
-    // vector<int>arr1{1,4,2,1,5,2,4};
+//     vector<int>arr{1,4,2,1,5,2,4};
+//     vector<int>arr1{1,4,2,1,5,2,4,};
 
-    // int ans = find_uniqu(arr);
-    // cout << "Unique element is " <<  ans << endl;
-// UNION
+//     // int ans = find_uniqu(arr);
+//     // cout << "Unique element is " <<  ans << endl;
+// // UNION
 
 
 //     vector<int>ans;
 
-//    nagelected duplicat number 
+// //    nagelected duplicat number 
 
 
 //     for(int i = 0; i < arr.size(); i++){
@@ -83,11 +83,12 @@ int main(){
 //                 arr1[j] = INT_MIN;
                
 //             }
-//         }
+//         } 
+//           ans.push_back(element);
 //     }
-//     for(int i = 0; i < arr.size(); i++){
-//         ans.push_back(arr[i]);
-//     }
+//     // for(int i = 0; i < arr.size(); i++){
+//     //     ans.push_back(arr[i]);
+//     // }
 
 
 //     for(int j = 0; j < arr1.size(); j++){
@@ -186,10 +187,10 @@ int main(){
 
 // Sort 0's and 1's 
 
-vector<int>arr{0,1,1,0,1,0,1,0,0};
-int start = 0; 
-int mid = 0;
-int end = arr.size() -1;
+// vector<int>arr{0,1,1,0,1,0,1,0,0};
+// int start = 0; 
+// int mid = 0;
+// int end = arr.size() -1;
 
 // while (start < end)
 // {
@@ -218,24 +219,24 @@ int end = arr.size() -1;
 
 // ANOTHER PROCESS
 
-while (mid != end)
-{
-    if(arr[mid] == 0){
-        //for swap from left side
-        swap(arr[start],arr[mid]);
-        start++;
-        mid++;
-    }
-    else{
-        //for swap from right side
-        swap(arr[mid],arr[end]);
-        end--;
-    }
-}
+// while (mid != end)
+// {
+//     if(arr[mid] == 0){
+//         //for swap from left side
+//         swap(arr[start],arr[mid]);
+//         start++;
+//         mid++;
+//     }
+//     else{
+//         //for swap from right side
+//         swap(arr[mid],arr[end]);
+//         end--;
+//     }
+// }
 
-for(auto ele:arr){
-    cout << ele << " ";
-}
+// for(auto ele:arr){
+//     cout << ele << " ";
+// }
 
 
 
