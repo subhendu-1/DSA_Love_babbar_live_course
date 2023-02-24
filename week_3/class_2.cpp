@@ -244,5 +244,62 @@ int main(){
 // for(int i = 0; i < arr.size(); i++){
 //     cout << arr[i] << " ";
 // }
+
+
+
+// Leetcode-189 problem Rotate array
+
+// class Solution {
+// public:
+//     void reverse(vector<int>& num,int low,int high){
+//         while(low < high){
+//             swap(num[low],num[high]);
+//             low++;
+//             high--;
+//         }
+        
+//     }
+//     void rotate(vector<int>& nums, int k) {
+//         // vector<int>temp(nums.size());
+        
+//         // for(int i = 0; i < nums.size(); i++){
+//         //     temp[(i+k)%nums.size()] = nums[i];
+//         // }
+//         // // copy the vector temp to nums
+//         // nums = temp;
+        
+
+//         // This code time complexity is O(n) and space complexity O(0)
+//         int n = (int)nums.size();
+//         k = k%n;
+//         reverse(nums,0,n-k-1);
+//         reverse(nums,n-k,n-1);
+//         reverse(nums,0,n-1);
+        
+//     }
+// };
+
+
+// leetcode - 169 problem majority Element
+
+vector<int>nums{2,3,2};
+int n = (int)nums.size();
+int limit = n/2;
+int count = 0;
+
+for(int i = 0; i < n; i++){
+    int element = nums[i];
+    for(int j = i+1; j < n; j++){
+        if(element == nums[j]){
+            count++;
+            if(count > limit){
+                cout << element;
+                break;
+            }
+        }
+    }
+}
+
+
     return 0;
 }
