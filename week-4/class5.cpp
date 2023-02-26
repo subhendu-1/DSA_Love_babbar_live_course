@@ -28,6 +28,10 @@ void bubbleSort(vector<int>&vec){
         }
     }
 }
+
+void insertionSort(vector<int>&vec){
+    
+}
 int main(){
     vector<int>vec{2,6,3,8,9,15};
     // selectionSort(vec);
