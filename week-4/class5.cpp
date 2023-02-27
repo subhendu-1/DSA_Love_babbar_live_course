@@ -30,7 +30,7 @@ void bubbleSort(vector<int>&vec){
 }
 
 void insertionSort(vector<int>&vec){
-    
+    int flag=0;
 }
 int main(){
     vector<int>vec{2,6,3,8,9,15};
