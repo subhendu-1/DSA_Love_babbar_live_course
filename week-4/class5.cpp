@@ -30,12 +30,28 @@ void bubbleSort(vector<int>&vec){
 }
 
 void insertionSort(vector<int>&vec){
-    int flag=0;
+    int n = vec.size();
+    for(int i = 1; i < n;i++){
+        int val = vec[i];
+        int j;
+        for(j = i-1; j >= 0; j--){
+            // compare
+            if(vec[j] > val){
+                // shift
+                vec[j+1] = vec[j];
+            }
+            else{
+                break;
+            }
+        }
+        vec[j+1] = val;
+    }
 }
 int main(){
     vector<int>vec{2,6,3,8,9,15};
     // selectionSort(vec);
-    bubbleSort(vec);
+    // bubbleSort(vec);
+    insertionSort(vec);
     for(int i = 0; i < vec.size(); i++){
         cout << vec[i] << " ";
     }
