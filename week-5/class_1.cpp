@@ -60,6 +60,21 @@ void uppercaseTolower(char arr[]){
         arr[i] = arr[i]-'A'+'a';
     }
 }
+
+bool comapare(string a,string b){
+    int a_length = a.length();
+    // int b_length = b.length();
+    if(a.length() != b.length()){
+        return false;
+    }
+
+    for(int i = 0; i < a.length(); i++){
+        if(a[i] != b[i]){
+            return false;
+        }
+    }
+    return true;
+}
 int main(){
     // char arr[100];
     // // cin >> arr;
@@ -104,18 +119,48 @@ int main(){
 
     // String:-------------------->
 
-    string str;
-    cout << "Enter the sring " << endl;
-    // cin >> str;
-    // When you want to take in input with space,tab or any this spacial you use getline() function
-    getline(cin,str);
-    cout << "print the array " << str << endl;
+    // string str;
+    // cout << "Enter the sring " << endl;
+    // // cin >> str;
+    // // When you want to take in input with space,tab or any this spacial you use getline() function
+    // getline(cin,str);
+    // cout << "print the array " << str << endl;
 
-    cout << "length:- " << str.length() << endl;  
-    cout << "isEmpty:- " << str.empty() << endl;
+    // cout << "length:- " << str.length() << endl;  
+    // cout << "isEmpty:- " << str.empty() << endl;
 
-    str.push_back('A');
-    cout << str << endl;
+    // str.push_back('A');
+    // cout << str << endl;
+
+    string first = "Subhendu is a Web Developer";
+    string second = "Subhendua";
+
+    cout << first.substr(0,4) << endl;
+
+    if(first.compare(second) == 0){
+        cout << "first and last are exactly same" << endl;
+    }
+    else{
+        cout << "they are not same" << endl;
+    }
+
+    string target = "Subhendu";
+    int index = first.find(target);
+    cout << index << endl;
+    cout << first.find(target) << endl;
+    if(first.find(target) == string::npos){
+        cout << "not found" << endl;
+    }
+    else{
+        cout << first.find(target) << endl;
+    }
+
+    string word = "are";
+    first.replace(9,2,word);
+    cout << first << endl;
+
+    first.erase(9,4);
+    cout << first << endl;
 
 
     return 0;
