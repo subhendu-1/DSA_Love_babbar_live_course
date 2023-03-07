@@ -33,41 +33,50 @@ int& solv(){
 }
 
 int main(){
-    int a = 6;
-    int* p = &a;
-    int** q = &p;  //This is Two pointer approach
+    // int a = 6;
+    // int* p = &a;
+    // int** q = &p;  //This is Two pointer approach
 
-    cout << a << endl;
-    cout << &a << endl;
-    cout << p<< endl;
-    cout << &p << endl;
-    cout << *p << endl;
-    cout << q << endl;
-    cout << &q << endl;
-    cout << *q << endl;
-    cout << **q << endl;
+    // cout << a << endl;
+    // cout << &a << endl;
+    // cout << p<< endl;
+    // cout << &p << endl;
+    // cout << *p << endl;
+    // cout << q << endl;
+    // cout << &q << endl;
+    // cout << *q << endl;
+    // cout << **q << endl;
 
-    int b = 8;
-    int* c = &b;
-    //before
-    cout << b << endl;
-    cout << c << endl;
-    cout << *c <<  endl;
-    util(c);
-    //After
-    cout << b << endl;
-    cout << c << endl;
-    cout << *c <<  endl;
+    // int b = 8;
+    // int* c = &b;
+    // //before
+    // cout << b << endl;
+    // cout << c << endl;
+    // cout << *c <<  endl;
+    // util(c);
+    // //After
+    // cout << b << endl;
+    // cout << c << endl;
+    // cout << *c <<  endl;
 
 
 
-    // passe by reference
+    // // passe by reference
 
-    int x = 5;
-    int& y = x;
-    cout << x << endl;
-    cout << y << endl;
+    // int x = 5;
+    // int& y = x;
+    // cout << x << endl;
+    // cout << y << endl;
 
-    cout << solv() << endl;
+    // cout << solv() << endl;
+
+    char arr[] = {'a','e','y','b'};
+    char* array = arr;
+
+    cout << arr << endl;
+    cout << array << endl;
+    cout << &array << endl;
+    cout << &arr[0] << endl;
+    cout << &arr << endl;
     return 0;
 }
