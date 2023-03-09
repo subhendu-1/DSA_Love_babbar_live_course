@@ -78,5 +78,9 @@ int main(){
     cout << &array << endl;
     cout << &arr[0] << endl;
     cout << &arr << endl;
+
+
+    char array[] = {'a'};
+    char* array = array;
     return 0;
 }
