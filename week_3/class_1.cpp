@@ -65,13 +65,13 @@ int reverse_array(int arr[],int size){
 
 int main(){
 
-int arr[50];
-int size,key;
-cout << "Enter the size and key ";
-cin >> size >> key ;
-for(int i = 0; i < size; i++){
-    cin >> arr[i];
-}
+// int arr[50];
+// int size,key;
+// cout << "Enter the size and key ";
+// cin >> size >> key ;
+// for(int i = 0; i < size; i++){
+//     cin >> arr[i];
+// }
 // if(leniar_search(arr,size,key)){
 //     cout << "Found the number";
 // }
@@ -87,6 +87,15 @@ for(int i = 0; i < size; i++){
 //     cout << str[i] << " " ;  
 // }
 
+
+//This is wrong because memset take The memset() function fills the first n bytes of the memory area pointed to by s with the constant byte c.
+// and char array take 1 byte of size but int take 4 bytes thats why you not create int array in memeset
+
+// int mems[] = {2,5,62,98,2};
+// memset(mems,,sizeof(mems));
+// for(int i = 0; i < sizeof(mems); i++){
+//     cout << mems[i] << " ";
+// }
 // int start = 0; 
 // int end = size -1;
 
@@ -103,12 +112,8 @@ for(int i = 0; i < size; i++){
 //     end--;
 // }
 
-// int str = reverse_array(arr,size);
-// for(int i = 0; i < size; i++){
-//     cout << str[i] << " ";
-// }
 
-reverse_array(arr,size);
+// reverse_array(arr,size);
 
     return 0;
 }
