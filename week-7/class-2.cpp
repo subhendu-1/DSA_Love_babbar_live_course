@@ -64,17 +64,29 @@ void findMin(int arr[],int n,int i,int& mini){
     // return max;
 }
 
-bool checkKey(int arr[],int n,int i,int key){
+// bool checkKey(int arr[],int n,int i,int key){
+//     if(i >= n){
+//         return false;
+//     }
+
+//     if(arr[i] == key){
+//         return true;
+//     }
+
+//     bool ans = checkKey(arr,n,i+1,key);
+//     return ans;
+// }
+int checkKey(int arr[],int n,int i,int key){
     if(i >= n){
-        return false;
+        return -1;
     }
 
     if(arr[i] == key){
-        return true;
+        return i;
     }
 
-    bool ans = checkKey(arr,n,i+1,key);
-    return ans;
+    int ans = checkKey(arr,n,i+1,key);
+   
 }
 
 int main(){
@@ -88,18 +100,21 @@ int main(){
     int arr[5] = {2,5,6,27,7};
     int n = 5;
     int i = 0;
-    // traversArray(arr,n);
+    // // traversArray(arr,n);
 
-    int maxi = INT_MIN;
+    // int maxi = INT_MIN;
 
-    findMax(arr,n,i,maxi);
+    // findMax(arr,n,i,maxi);
 
-    cout << "maximum number is " << maxi << endl;
-    int mini = INT_MAX;
+    // cout << "maximum number is " << maxi << endl;
+    // int mini = INT_MAX;
 
-    findMin(arr,n,i,mini);
+    // findMin(arr,n,i,mini);
 
-    cout << "minimum number is " << mini << endl;
+    // cout << "minimum number is " << mini << endl;
+
+    int key = 27;
+    cout << checkKey(arr,n,i,key);
 
     return 0;
 }
