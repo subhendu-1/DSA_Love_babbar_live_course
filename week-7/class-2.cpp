@@ -88,6 +88,18 @@ int checkKey(int arr[],int n,int i,int key){
     int ans = checkKey(arr,n,i+1,key);
    
 }
+int checkKey(int arr[],int n,int i,int key){
+    if(i >= n){
+        return -1;
+    }
+
+    if(arr[i] == key){
+        return i;
+    }
+
+    int ans = checkKey(arr,n,i+1,key);
+   
+}
 
 int main(){
     // int n;
