@@ -1,5 +1,6 @@
 #include<bits/stdc++.h>
 #include<limits.h>
+#include<vector>
 using namespace std;
 
 
@@ -76,29 +77,94 @@ void findMin(int arr[],int n,int i,int& mini){
 //     bool ans = checkKey(arr,n,i+1,key);
 //     return ans;
 // }
-int checkKey(int arr[],int n,int i,int key){
+// int checkKey(int arr[],int n,int i,int key){
+//     if(i >= n){
+//         return -1;
+//     }
+
+//     if(arr[i] == key){
+//         return i;
+//     }
+
+//     int ans = checkKey(arr,n,i+1,key);
+   
+// }
+
+// print all repetative char
+
+
+// void checkKey(string arr,int n,int i,int key){
+//     if(i >= n){
+//         return;
+//     }
+
+//     if(arr[i] == key){
+//         cout << i << " ";
+//     }
+
+//     checkKey(arr,n,i+1,key);
+   
+// }
+
+// When store the index in array 
+// vector<int> checkKey(string arr,int n,int i,int key){
+//     vector<int>ans;
+//     if(i >= n){
+//         return ans;
+//     }
+//     if(arr[i] == key){
+//         ans.push_back(i);
+//     }
+
+//     checkKey(arr,n,i+1,key);
+//     return ans;
+   
+// }
+
+// another process
+
+
+// void checkKey(string arr,int n,int i,int key,vector<int>& ans){
+
+//     if(i >= n){
+//         return ;
+//     }
+//     if(arr[i] == key){
+//         ans.push_back(i);
+//     }
+
+//     checkKey(arr,n,i+1,key,ans);
+//     // return ans;
+   
+// }
+// count repeted number
+void checkKey(string arr,int n,int i,int key,int& count){
+    // int count = 0;
     if(i >= n){
-        return -1;
+        return;
     }
-
     if(arr[i] == key){
-        return i;
+        count++;
     }
 
-    int ans = checkKey(arr,n,i+1,key);
+    checkKey(arr,n,i+1,key,count);
+    // return ans;
    
 }
-int checkKey(int arr[],int n,int i,int key){
-    if(i >= n){
-        return -1;
+
+// printing all digit in any number
+
+void print_digit(int num){
+    if(num == 0){
+        return;
     }
 
-    if(arr[i] == key){
-        return i;
-    }
+        int digit = num % 10;
+        num /= 10;
+    
 
-    int ans = checkKey(arr,n,i+1,key);
-   
+    print_digit(num);
+        cout << digit << " ";
 }
 
 
@@ -132,9 +198,9 @@ int main(){
     // cout << number << endl ;c
 
 
-    int arr[5] = {2,5,6,27,7};
-    int n = 5;
-    int i = 0;
+    // int arr[5] = {2,5,6,27,7};
+    // int n = 5;
+    // int i = 0;
     // // traversArray(arr,n);
 
     // int maxi = INT_MIN;
@@ -148,8 +214,32 @@ int main(){
 
     // cout << "minimum number is " << mini << endl;
 
-    int key = 27;
-    cout << checkKey(arr,n,i,key);
+    // int key = 27;
+    // cout << checkKey(arr,n,i,key);
+
+
+    string arr = "subhendu";
+    char key = 'u';
+    int i = 0;
+    int n = arr.length();
+    // vector<int> ans;
+    // checkKey(arr,n,i,key,ans);
+
+    // for(int i = 0; i < ans.size(); i++){
+    //     cout << ans[i] << " ";
+    // }
+
+    // int cnt = 0;
+    // checkKey(arr,n,i,key,cnt);
+    // cout << cnt << endl;
+
+    int num = 357;
+    // vector<int>ans;
+    print_digit(num);
+    
+    // for(int i = 0; i < ans.size(); i++){
+    //     cout << ans[i] << " ";
+    // }
 
 
     
