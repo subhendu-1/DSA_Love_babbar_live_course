@@ -54,6 +54,12 @@ int binary_search(vector<int>& array,int start,int end,int key){
     return array[mid] < key ? binary_search(array,mid + 1,end,key) :  binary_search(array,start,mid-1,key);
 }
 
+int binarySearch(vector<int>& arr,int first,int last, int key){
+    if(first){
+        
+    }
+}
+
 int main(){
 
     // vector<int>arr  = {10,20,20,30,40};
