@@ -55,8 +55,19 @@ int binary_search(vector<int>& array,int start,int end,int key){
 }
 
 int binarySearch(vector<int>& arr,int first,int last, int key){
-    if(first){
-        
+    if(first > last){
+        return -1;
+    }
+
+    int mid = (first + last)/2;
+    if(arr[mid] == key){
+        return mid;
+    }
+    else if(arr[mid] < key){
+        return binarySearch(arr,mid + 1, last,key);
+    }
+    else{
+        return binarySearch(arr,first,mid-1,key);
     }
 }
 
@@ -77,7 +88,8 @@ int main(){
     int s = 0;
     int end = arr.size() - 1;
     int key = 14;
-    int ans = binary_search(arr,s,end,key);
+    // int ans = binary_search(arr,s,end,key);
+    int ans = binarySearch(arr,s,end,key);
     cout << "Index is " << ans << endl;
 
     return 0;
