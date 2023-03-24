@@ -70,6 +70,25 @@ int binarySearch(vector<int>& arr,int first,int last, int key){
         return binarySearch(arr,first,mid-1,key);
     }
 }
+void subsequenc(string str,string output,int i,vector<string>&v){
+    // base 
+    if(i >= str.length()){
+        // cout << output << endl;
+
+        // when you store all subsequenc
+        v.push_back(output);
+        return;
+    }
+
+    //exclude
+
+    subsequenc(str,output,i+1,v);
+    // include 
+    // output.push_back(str[i]);
+    output = output + str[i];
+    subsequenc(str,output,i+1,v);
+    
+}
 
 int main(){
 
@@ -84,13 +103,26 @@ int main(){
     // }
 
 
-    vector<int>arr = {1,5,7,8,14,23};
-    int s = 0;
-    int end = arr.size() - 1;
-    int key = 14;
-    // int ans = binary_search(arr,s,end,key);
-    int ans = binarySearch(arr,s,end,key);
-    cout << "Index is " << ans << endl;
+    // vector<int>arr = {1,5,7,8,14,23};
+    // int s = 0;
+    // int end = arr.size() - 1;
+    // int key = 14;
+    // // int ans = binary_search(arr,s,end,key);
+    // int ans = binarySearch(arr,s,end,key);
+    // cout << "Index is " << ans << endl;
 
+
+// find subsequence in a string 
+    string str = "abc";
+    string output = "";
+    int i = 0;
+    vector<string>vac;
+    subsequenc(str,output,i,vac);
+
+    cout << "All the subsequence is" << endl;
+
+    for(auto it:vac){
+        cout << it << " ";
+    }
     return 0;
 }
