@@ -33,10 +33,21 @@ int solve(vector<int> &arr, int target){
 int cut_into_segment(int x,int y,int z,int target){
     
 }
+int fun(int a,int b){
+    if(b == 0){
+        return 0;
+    }
+    if(b == 1){
+        return a;
+    }
+    return a + fun(a,b-1);
+}
 
 int main(){
     vector<int>arr{1,2,3};
     int target = 5;
-    int ans = solve(arr,target);
-    cout << "minimum number is " << ans << endl;
+    // int ans = solve(arr,target);
+    // cout << "minimum number is " << ans << endl;
+    int ans = fun(3,8);
+    cout << ans;
 }
