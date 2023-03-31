@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
 void quickSort(int arr[],int s,int e){
-vector<int>ans;
+// vector<int>ans;
 }
 
 int main(){
