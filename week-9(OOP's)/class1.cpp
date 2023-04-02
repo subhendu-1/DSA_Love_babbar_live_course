@@ -56,5 +56,14 @@
      mastangGt.setAge(5);
      cout << "The age of car is " << mastangGt.getAge();
 
+
+    //  DYNAMIC MEMORY ALLOCATION
+
+    car* subhendu = new car;
+
+    // accesing
+
+    cout << (*subhendu).price;
+
     return 0;
  }
