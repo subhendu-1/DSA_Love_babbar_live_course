@@ -64,6 +64,8 @@
     // accesing
 
     cout << (*subhendu).price;
+    cout << subhendu->name;
+    subhendu->lights();
 
     return 0;
  }
