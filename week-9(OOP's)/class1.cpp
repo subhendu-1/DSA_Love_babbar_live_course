@@ -36,37 +36,81 @@
     void setAge(int age){
         this->age = age;
     }
+
+    // default constractor :- when you creat first object of a class constractor called automatically
+
+    car(){
+        cout << "default constractor" << endl;
+    }
+
+    // paramitatized constractor
+
+    car(int age){
+        this->age = age;
+        cout << "first parammitarized constractor" << endl;
+    }
+
+    car(int price,string name){
+        this->price = price;
+        this->name = name;
+        cout << "Secod paramitarized constractor" << endl;
+    }
+
+    // copy constractor
+
+    car(car &obj){
+        this->name = obj.name;
+        this->age = obj.age;
+        this->price = obj.price;
+        cout << "copy constractor" << endl;
+    }
+
+    // destactor
+
+    ~car(){
+        cout << "destractor function calling" << endl;
+    }
+
+
  };
 
  int main(){
 
     // Object Creation
     //Static
-    car mastangGt;
+    // car mastangGt;
 
-    mastangGt.price = 30000000;
-    mastangGt.name = "MASTANG-GT";
-    cout << "The price of mastang Gt is " << mastangGt.price << endl;
-    cout << "The car name is " << mastangGt.name << endl;
-    mastangGt.speed();
-    mastangGt.lights();
-
-
-    // ACCESSING PRIVATE DATA MEMBER USING GETTER AND SETTER 
-     mastangGt.setAge(5);
-     cout << "The age of car is " << mastangGt.getAge();
+    // mastangGt.price = 30000000;
+    // mastangGt.name = "MASTANG-GT";
+    // cout << "The price of mastang Gt is " << mastangGt.price << endl;
+    // cout << "The car name is " << mastangGt.name << endl;
+    // mastangGt.speed();
+    // mastangGt.lights();
 
 
-    //  DYNAMIC MEMORY ALLOCATION
+    // // ACCESSING PRIVATE DATA MEMBER USING GETTER AND SETTER 
+    //  mastangGt.setAge(5);
+    //  cout << "The age of car is " << mastangGt.getAge();
 
-    car* subhendu = new car;
 
-    // accesing
+    // //  DYNAMIC MEMORY ALLOCATION
 
-    cout << (*subhendu).price;
-    cout << subhendu->name;
-    subhendu->lights();
-    subhendu->speed();
+    // car* subhendu = new car;
+
+    // // accesing
+
+    // cout << (*subhendu).price;
+    // cout << subhendu->name;
+    // subhendu->lights();
+    // subhendu->speed();
+// paramitarized calling
+    // car first(36);
+    // car second(35,"mastangGt");
+// copy constractor calling
+    car b;
+    car a = b;
+
+    // car a(b);
 
     return 0;
  }
