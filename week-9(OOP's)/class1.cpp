@@ -66,6 +66,7 @@
     cout << (*subhendu).price;
     cout << subhendu->name;
     subhendu->lights();
+    subhendu->speed();
 
     return 0;
  }
