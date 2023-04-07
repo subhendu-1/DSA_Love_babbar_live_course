@@ -6,9 +6,9 @@ using namespace std;
 
 class animal{
     private:
+    public:
         string name;
         int age;
-    public:
     
         void eating(){
             cout << "He wants to eating food" << endl;
@@ -29,7 +29,7 @@ class cat:protected animal{
     public:
         int speed;
         void print(){
-
+             cout << this->age;
             
         }
 };
@@ -46,6 +46,8 @@ int main(){
     cat c1;
     // c1.eating();
     c1.speed = 10;
-    cout << c1.speed;
+    cout << c1.speed << endl;
+    // cout << c1.age; // this is not accessable because in this child class data are protected
+    c1.print();
     return 0;
 }
