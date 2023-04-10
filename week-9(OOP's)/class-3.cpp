@@ -6,6 +6,7 @@ using namespace std;
 class Solution {
 public:
     int add;
+    int sub;
 };
 
 int main(){
