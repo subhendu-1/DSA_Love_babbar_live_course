@@ -87,6 +87,10 @@ void insertAtPosition(Node* &head , Node* &tail,int data,int position){
     
 }
 
+void insertedAtMiddle(){
+    
+}
+
 void print(Node* head){
         Node* temp = head;
 
