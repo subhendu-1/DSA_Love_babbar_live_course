@@ -149,7 +149,7 @@ int main(){
     insertAtLast(tail,40);
     insertAtLast(tail,50);
 
-    // insertAtPosition(head,tail,35,3);
+    insertAtPosition(head,tail,35,3);
 
     cout << "printing the data of linked list " << endl;
     print(tail);
