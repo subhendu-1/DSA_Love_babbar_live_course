@@ -21,7 +21,13 @@ class Node{
 
 // insert data in linked list before head 
 
-void insertAtHead(Node* & head,int data){
+void insertAtHead(Node* & head,Node* &tail,int data){
+        if(tail == NULL){
+        Node* newNode = new Node(data);
+        head = newNode;
+        tail = newNode;
+        return;
+        }
         // step1:-create new Node
         Node* newNode = new Node(data);
         
@@ -34,25 +40,34 @@ void insertAtHead(Node* & head,int data){
 
 // insert data in linked list at last
 
-void insertAtLast(Node* &tail,int data){
+void insertAtLast(Node* &head,Node* &tail,int data){
+    if(tail == NULL){
+        Node* newNode = new Node(data);
+        head = newNode;
+        tail = newNode;
+        return;
+    }
     // step1:-
     Node* newNode = new Node(data);
 
     // step2:-
-    if(tail == NULL){
-        tail = newNode;
-    }
-    else{
     tail->next = newNode;
 
-    }
 
     // step3:-
 
-    newNode -> next = NULL;
+    tail = newNode;
 }
 
-
+int findLength(Node* head){
+    int len = 0;
+    Node* temp = head;
+    while(temp != NULL){
+        temp = temp->next;
+        len++;
+    }
+    return len;
+}
 
 // insert at any position
 
@@ -64,9 +79,25 @@ void insertAtPosition(Node* &head , Node* &tail,int data,int position){
         return;
     }
 
+    if (position == 0){
+        insertAtHead(head,tail,data);
+        return;
+    }
+
+    int len = findLength(head);
+
+    if(position >= len){
+        insertAtLast(head,tail,data);
+        return;
+    }
+    {
+        /* code */
+    }
+    
+
     // step1:- find pre and current position
     Node* prev = head;
-    int i = 0;
+    int i = 1;
     while (i < position)
     {
         prev = prev->next;
@@ -87,9 +118,6 @@ void insertAtPosition(Node* &head , Node* &tail,int data,int position){
     
 }
 
-void insertedAtMiddle(){
-    
-}
 
 void print(Node* head){
         Node* temp = head;
@@ -138,23 +166,43 @@ int main(){
     // insert at end:-
 
     // Node* head = new Node(10);
-    // if last node is not their 
+    // Node* tail = new Node(10);
+    // // if last node is not their 
 
-    Node* tail = NULL;
-    Node* head = NULL;
+    // // Node* tail = NULL;
+    // // Node* head = NULL;
    
 
-    insertAtLast(tail,20);
-    insertAtLast(tail,30);
-    insertAtLast(tail,40);
-    insertAtLast(tail,50);
+    // insertAtLast(tail,20);
+    // insertAtLast(tail,30);
+    // insertAtLast(tail,40);
+    // insertAtLast(tail,50);
 
-    insertAtPosition(head,tail,35,3);
+    // print(tail);
+    // cout << endl;
 
-    cout << "printing the data of linked list " << endl;
-    print(tail);
+    // insertAtPosition(head,tail,35,3);
 
-   
+    // cout << "printing the data of linked list " << endl;
+    // print(head);
 
+        Node* head = NULL;
+        Node* tail = NULL;
+        insertAtHead(head, tail,20);
+        insertAtHead(head, tail,50);
+        insertAtHead(head, tail,60);
+        insertAtHead(head,tail, 90);
+        // insertAtLast(head, tail, 77);
+        // insertAtLast(head, tail, 57);
+        // insertAtLast(head, tail, 97);
+        // insertAtLast(head, tail, 27);
+
+        print(head);
+        cout << endl;
+
+        insertAtPosition(head,tail,35,2);
+
+        print(head);
+        cout << endl;
     return 0;
 }
