@@ -16,6 +16,10 @@ class Node{
         this->next = NULL;
     }
 
+    ~Node(){
+        cout << "The deleted data is " << this->data << "delete" << endl;
+    }
+
 
 };
 
@@ -118,7 +122,69 @@ void insertAtPosition(Node* &head , Node* &tail,int data,int position){
     
 }
 
+void  deleteAtposition(int position,Node* &head,Node* &tail){
+    if(head == NULL){
+        cout <<"don't delete,LL is empty" << endl;
+        return;
+    }
 
+    // Data deleted at first position
+
+    if(position == 1){
+        Node* temp = head;
+        // step:-1
+        head = head->next;
+        // step:-2
+        delete temp;
+        return;
+    }
+
+    // Data deleted at last position
+
+
+    int len = findLength(head);
+
+    if(position == len){
+        //find previous
+        int i = 1;
+        Node* prev = head;
+        while(i < position-1){
+            prev = prev->next;
+            i++;
+        }
+        // step:-2
+        prev->next = NULL;
+        // step:-3
+        Node* temp = tail;
+        // step:-4
+        tail = prev;
+        // step:-5
+        delete temp;
+    }
+
+    // Data deleted at middle positon
+
+
+    Node* prev = head;
+
+    int i = 1;
+    while(i < position){
+        prev = prev->next;
+        i++;
+    }
+
+    Node* curr = prev->next;
+
+    // step2:-
+
+    prev->next = curr->next;
+
+    // step4:-
+    curr->next = NULL;
+
+    // step5:-
+    delete curr;
+}
 void print(Node* head){
         Node* temp = head;
 
@@ -200,7 +266,12 @@ int main(){
         print(head);
         cout << endl;
 
-        insertAtPosition(head,tail,35,2);
+        // insertAtPosition(head,tail,35,2);
+
+
+        // Delete :-
+
+        deleteAtposition(2,head,tail);
 
         print(head);
         cout << endl;
