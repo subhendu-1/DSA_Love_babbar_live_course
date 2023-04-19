@@ -20,6 +20,11 @@ class Node{
             this->prev = NULL;
         }
 
+        ~Node(){
+            cout << this->data << " deleted data " << endl;
+
+        }
+
 };
 int findLength(Node* &head){
     int len = 0;
@@ -158,6 +163,56 @@ void insertAtPosition(Node* &head,Node* &tail,int data,int pos){
 
 }
 
+void deleteAtpos(Node* head,Node* tail,int positon){
+    if(head == NULL){
+        cout << "ll is empty" << endl;
+        return;
+    }
+    if(head->next == NULL){
+        //one node is their
+        Node* temp = head;
+        head = NULL;
+        tail = NULL;
+        delete temp;
+    }
+//Dlete first node
+    if(positon == 1){
+        Node* temp = head;
+        head = temp -> next;
+        head->prev = NULL;
+        temp->next = NULL;
+        delete temp;
+        return;
+
+    }
+
+    int len = findLength(head);
+    if(positon == len){
+        // delete at last
+        Node* temp = tail;
+        tail = temp->prev;
+        tail->next = NULL;
+        temp -> prev = NULL;
+        delete temp;
+        return;
+    }
+
+    int i = 1;
+    Node* left = head;
+    while(i < positon-1){
+        left = left -> next;
+        i++;
+    }
+    Node* curr = left->next;
+    Node* right = curr->next;
+
+    left -> next = right;
+    right -> prev = left;
+    curr -> prev = NULL;
+    curr -> next = NULL;
+    delete curr;
+}
+
 int main(){
 
     Node* first = new Node(10);
@@ -183,8 +238,8 @@ int main(){
     // cout << endl;
 
     insertAtTail(head,tail,101);
-    insertAtTail(head,tail,102);
-    insertAtTail(head,tail,101);
+    // insertAtTail(head,tail,102);
+    // insertAtTail(head,tail,101);
 
     cout << "print after insert the Node" << endl;
     print(first);
@@ -194,6 +249,12 @@ int main(){
 
     cout << "print after insert the Node" << endl;
     print(first);
+    cout << endl;
+
+    deleteAtpos(head,tail,1);
+
+    cout << "print after insert the Node" << endl;
+    print(head);
     cout << endl;
     return 0;
 }
