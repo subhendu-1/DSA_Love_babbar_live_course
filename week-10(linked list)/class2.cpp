@@ -183,6 +183,7 @@ void deleteAtpos(Node* head,Node* tail,int positon){
         temp->next = NULL;
         delete temp;
         return;
+        return;
 
     }
 
