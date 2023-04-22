@@ -81,6 +81,17 @@ Node* FindMiddle2(Node* &head){
     }
     return slow;
 }
+
+Node* reverKNode(Node* &head,int k){
+    if(head == NULL){
+        cout << "LL is empty" << endl;
+        return head;
+    }
+    if(head->next == NULL){
+        cout << "LL in one node is their" << endl;
+        return head;
+    }
+}
 int main(){
     Node* first = new Node(10);
     Node* second = new Node(20);
