@@ -214,20 +214,39 @@ void deleteAtpos(Node* head,Node* tail,int positon){
     delete curr;
 }
 
+Node* reverse(Node* &prev,Node* &curr){
+    if(curr == NULL){
+        //ll is alrady reverse
+        return prev;
+    }
+
+    //1 case slove
+    Node* froward = curr -> next;
+    curr -> next = prev;
+
+    reverse(curr,froward);
+}
+
+
 int main(){
 
     Node* first = new Node(10);
     Node* second = new Node(20);
     Node* third = new Node(30);
+    Node* fourth = new Node(40);
+    Node* fifth = new Node(50);
+    Node* sixth = new Node(60);
 
     Node* head = first;
-    Node* tail = third;
+    Node* tail = sixth;
 
     first->next = second;
     second->prev = first;
 
     second -> next = third;
     third -> prev = second;
+
+    
 
     cout << "print all the Node" << endl;
     print(first);
@@ -238,24 +257,34 @@ int main(){
     // print(first);
     // cout << endl;
 
-    insertAtTail(head,tail,101);
+    // insertAtTail(head,tail,101);
     // insertAtTail(head,tail,102);
     // insertAtTail(head,tail,101);
 
-    cout << "print after insert the Node" << endl;
-    print(first);
-    cout << endl;
+    // cout << "print after insert the Node" << endl;
+    // print(first);
+    // cout << endl;
 
-    insertAtPosition(head,tail,35,5);
+    // insertAtPosition(head,tail,35,5);
 
-    cout << "print after insert the Node" << endl;
-    print(first);
-    cout << endl;
+    // cout << "print after insert the Node" << endl;
+    // print(first);
+    // cout << endl;
 
-    deleteAtpos(head,tail,1);
+    // deleteAtpos(head,tail,1);
 
-    cout << "print after insert the Node" << endl;
+    // cout << "print after insert the Node" << endl;
+    // print(head);
+    // cout << endl;
+
+
+    Node* prev = NULL;
+    Node* curr = head;
+    head = reverse(prev,curr);
+
+    cout << "print after reverse linked list " << endl;
     print(head);
     cout << endl;
+
     return 0;
 }

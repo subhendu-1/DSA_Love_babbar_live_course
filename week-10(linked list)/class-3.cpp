@@ -87,10 +87,38 @@ Node* reverKNode(Node* &head,int k){
         cout << "LL is empty" << endl;
         return head;
     }
-    if(head->next == NULL){
-        cout << "LL in one node is their" << endl;
+    // if(head->next == NULL){
+    //     cout << "LL in one node is their" << endl;
+    //     return head;
+    // }
+    int len = findLength(head);
+    if(k > len){
+        // input position in less than length
         return head;
     }
+
+    //hear we coming length is gatter than k
+
+    // soleve one case reverse 
+
+    Node* prev = NULL;
+    Node* curr = head;
+    Node* forward = curr -> next;
+    int count = 0;
+
+    while(count < k){
+        forward = curr -> next;
+        curr -> next = prev;
+        prev = curr;
+        curr = forward;
+        count++;
+    }
+
+    if(forward  != NULL){
+        head -> next = reverKNode(forward,k);
+    }
+
+    return prev;
 }
 int main(){
     Node* first = new Node(10);
@@ -116,6 +144,9 @@ int main(){
 
 
     cout << "middle element of the ll is "<< FindMiddle2(first) -> data << endl;
+
+    first = reverKNode(first,5);
+    Print(first);
 
     return 0;
 }
