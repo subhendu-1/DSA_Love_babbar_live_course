@@ -120,6 +120,10 @@ Node* reverKNode(Node* &head,int k){
 
     return prev;
 }
+
+Node* findLoop(Node* head){
+    
+}
 int main(){
     Node* first = new Node(10);
     Node* second = new Node(20);
