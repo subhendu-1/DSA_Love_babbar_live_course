@@ -122,7 +122,22 @@ Node* reverKNode(Node* &head,int k){
 }
 
 Node* findLoop(Node* head){
-    
+
+}
+
+bool findCircular(Node* head){
+    if(head == NULL){
+        return false;
+    }
+    Node* temp = head;
+  
+    while(head != NULL){
+        if(head->next == temp){
+            return true;
+        }
+        head = head -> next;
+    }
+    return false;
 }
 int main(){
     Node* first = new Node(10);
@@ -139,18 +154,21 @@ int main(){
     // fifth -> next = sixth;
     // sixth -> next = NULL;
 
-    int len = findLength(first);
-    cout << len << endl;
+    // int len = findLength(first);
+    // cout << len << endl;
 
-    Print(first);
-    cout << "middle element of the linked list is" << endl;
-    findMiddle(first,len);
+    // Print(first);
+    // cout << "middle element of the linked list is" << endl;
+    // findMiddle(first,len);
 
 
-    cout << "middle element of the ll is "<< FindMiddle2(first) -> data << endl;
+    // cout << "middle element of the ll is "<< FindMiddle2(first) -> data << endl;
 
-    first = reverKNode(first,5);
-    Print(first);
+    // first = reverKNode(first,5);
+    // Print(first);
+
+    bool ans = findCircular(first);
+    cout << ans << endl;
 
     return 0;
 }
