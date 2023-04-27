@@ -139,6 +139,12 @@ bool findCircular(Node* head){
     }
     return false;
 }
+
+Node* findLoop(Node* &head){
+    if(head == NULL){
+        return NULL;
+    }
+}
 int main(){
     Node* first = new Node(10);
     Node* second = new Node(20);
