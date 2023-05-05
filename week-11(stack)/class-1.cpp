@@ -25,6 +25,69 @@ string Reverse(string str){
 }
 
 
+// Stack implementaion 
+
+class Stack{
+    public:
+        int *arr;
+        int size;
+        int top;
+    
+    Stack(int size){
+        arr = new int[size];
+        this->size = size;
+        top = -1;
+    }
+    
+    void push(int data){
+
+        if(size-top > 1){
+            //space avaliable
+            //insert
+            top++;
+            arr[top] = data;
+        }
+        else{
+            // stack have a not space
+            cout << "Stack is Overflow" << endl;
+        }
+
+    }
+
+    void pop(){
+            if(top == -1){
+                //stack is emepty
+                cout << "Stack is Underflow" << endl;
+            }
+            else{
+                //stack is not empty
+                top--;
+            }
+    }
+
+    int getTop(){
+            if(top == -1){
+                cout << "Stack is empty" << endl;
+            }
+            else{
+                return arr[top];
+            }
+    }
+
+    int getSize(){
+
+    }
+
+
+    bool isEmpty(){
+
+    }
+
+
+    
+};
+
+
 
 int main(){
     string str = "36255223";
