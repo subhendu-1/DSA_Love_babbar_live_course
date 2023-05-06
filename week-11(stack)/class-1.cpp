@@ -75,12 +75,17 @@ class Stack{
     }
 
     int getSize(){
-
+        return top+1;
     }
 
 
     bool isEmpty(){
-
+        if(top == -1){
+            return false;
+        }
+        else{
+            return true;
+        }
     }
 
 
