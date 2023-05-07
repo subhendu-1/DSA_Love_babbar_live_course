@@ -202,4 +202,6 @@ int main(){
 
     s.pop2();
     s.print();
+    s.pop2();
+    s.print();
 }
