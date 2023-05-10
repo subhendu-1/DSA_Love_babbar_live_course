@@ -33,6 +33,10 @@ void insertAtBottom(stack<int>&s){
     solve(s,tartget);
 }
 
+void reverseStack(stack<int>&s){
+    
+}
+
 int main(){
     stack<int>s;
     for(int i = 0; i < 5; i++){
