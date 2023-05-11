@@ -22,19 +22,31 @@ using namespace std;
 }
 
 
-void insertAtBottom(stack<int>&s){
+void insertAtBottom(stack<int>&s,int target){
     if(s.empty()){
         cout << "Stack is empty" << endl;
         return;
     }
 
-    int tartget = s.top();
-    s.pop();
-    solve(s,tartget);
+    // int tartget = s.top();
+    // s.pop();
+    solve(s,target);
 }
 
 void reverseStack(stack<int>&s){
-    
+    // base case
+    if(s.empty()){
+        return;
+    }
+
+    int target = s.top();
+    s.pop();
+
+    // recrsion
+
+    reverseStack(s);
+
+    insertAtBottom(s,target);
 }
 
 int main(){
@@ -45,7 +57,10 @@ int main(){
         s.push(n);
     }
 
-    insertAtBottom(s);
+    // insertAtBottom(s);
+
+
+    reverseStack(s);
 
     cout << "print stack" << endl;
 
