@@ -108,7 +108,7 @@ int main(){
     //     s.pop();
     // }
 
-    string str = "({)";
+    string str = ")))))))))";
     if(checkValid(str)){
         cout << "valid" << endl;
     }
